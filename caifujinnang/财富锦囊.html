@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html style="font-size:100px;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <title>财富锦囊2</title>
+        <link rel="stylesheet" href="../style/css/caifu.css">
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+        <script src="../js/template-web.js" charset="utf-8"></script>
+    </head>
+    <body id="page">
+        <header class="m-header">
+            <nav class="m-header-nav" id="nav">
+            </nav>
+        </header>
+        <div class="m-article">
+            <a href="javascript: ;" id="toTop"></a>
+        </div>
+        <div class="m-refresh">
+            正在刷新.....
+        </div>
+        <!-- 模板 ,循环输出导航栏-->
+        <script type="text/html" id="navContent">
+            {{each data.result value i}}
+                <li class="ui-item" data-id="{{value.id}}">{{value.title}}</li>
+            {{/each}}
+        </script>
+        <!-- 模板，循环输出文章 -->
+        <script type="text/html" id="essay">
+            {{each result value i}}
+                <article class="m-article-item">
+                    {{if value.imgUrl}}
+                        <img src="{{value.imgUrl}}" alt="" class="ui-picture">
+                    {{/if}}
+                    <h3 class="m-article-title"><a href="{{value.url}}" class="ui-link">{{i}} {{value.title}}</a></h3>
+                    <div class="m-article-date">
+                        {{value.onlineTime}}
+                    </div>
+                    <div class="m-article-author">
+                        <img src="../切图/project-logo.png" alt="" class="ui-logo"><span class="ui-item">{{value.author}}</span>
+                    </div>
+                </article>
+            {{/each}}
+        </script>
+        <!-- js -->
+        <script type="text/javascript">
+            // 定义变量
+            console.log(sessionStorage);
+            var dataList = {
+                typeId : 0 ,
+                page : sessionStorage.getItem('pageNum') ? sessionStorage.getItem('pageNum') : 0 ,
+                size : 10
+            }
+            var articleArr = [];
+            var isFirstScroll = true,
+                isTop = true,
+                timer = null;
+            // 数组排序
+            function sortArr(value1, value2){
+                return value1.id - value2.id;
+            }
+            function getArticleTypes() {
+                // 请求返回导航栏信息
+                $.get('type.do', function(data) {
+                    var res = JSON.parse(data);
+                    var sortedArr = res.data.result.sort(sortArr);
+                    var navContainer = template('navContent', res);
+                    $('#nav').html(navContainer);
+                    dataList.typeId = sortedArr[0].id;
+                    var sessionData = sessionStorage.getItem('data');
+                    if (sessionData) {
+                        // 如果缓存了数据，则刷新页面并滚动到对应位置。
+                        var arr = JSON.parse(sessionData);
+                        // console.log(arr);
+                        var allData = [];
+                        arr.forEach(function(item) {
+                            JSON.parse(item).forEach(function(innerItem) {
+                                allData.push(innerItem);
+                            })
+                        });
+                        // console.log(allData);
+                        var articleContainer = template('essay', {result: allData});
+                        $('.m-article').append(articleContainer);
+                        $(window).scrollTop(sessionStorage.getItem('scrollTop'));
+                    } else {
+                        getArticle(dataList);
+                    }
+
+                });
+            }
+            // 转化时间戳
+            function formatDate(now)   {
+                var year = now.getFullYear();
+                var month = now.getMonth()+1;
+                var date = now.getDate();
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                if (minute.toString().length == 1) {
+                    minute += '0';
+                }
+                return year + '年' + month + '月' + date + '日' + ' ' + hour + ':' + minute;
+            }
+            // 请求文章信息
+            function getArticle(param) {
+                // console.log(param);
+                $.get('list.do', param , function(data) {
+                    var articleList = JSON.parse(data);
+                    // console.log(articleList);
+                    articleArr.push(JSON.stringify(articleList.data.result));
+                    articleList.data.result.map(function(item) {
+                        return item.onlineTime = formatDate(new Date(item.onlineTime));
+                    });
+                    // console.log(articleList.data.result);
+                    var articleContainer = template('essay', articleList.data);
+                    $('.m-article').append(articleContainer);
+                    sessionStorage.setItem('pageNum', dataList.page);
+                    sessionStorage.setItem('data', JSON.stringify(articleArr));
+                });
+            }
+            function addEvents() {
+                $('#nav').on('click', function(event) {
+                    dataList.typeId = $(event.target).attr('data-id');
+                    getArticle(dataList);
+                });
+                $(window).on('scroll', function() {
+                    var hiddenHeight = $(window).scrollTop(),
+                        viewHeight = $(window).height(),
+                        allHeight = $(document).height();
+                        // console.log($(document).height());
+                        // console.log(hiddenHeight, viewHeight, allHeight);
+                    sessionStorage.setItem('scrollTop', hiddenHeight);
+                    if (!isFirstScroll) {
+                    // console.log(hiddenHeight ,viewHeight, allHeight);
+                        if (hiddenHeight + viewHeight >= allHeight) {
+                            // console.log('+1');
+                            dataList.page = parseInt(dataList.page) + 1;
+                            getArticle(dataList);
+                        }
+                    }
+                    isFirstScroll = false;
+                    console.log(isTop);
+                    // 判断何时出现回到顶部按钮
+                    console.log(hiddenHeight, viewHeight);
+                    if (hiddenHeight >= viewHeight) {
+                        // console.log($('#toTop').attr('display'));
+                        $('#toTop').css('display', 'block');
+                    }
+                    // 处理返回顶部是否停止
+                    if (!isTop) {
+                        console.log("in");
+                        clearInterval(timer);
+                    }
+                    isTop = false;
+                });
+                $('#toTop').on('click', function() {
+                    console.log(1);
+                    var hiddenHeight = $(window).scrollTop(),
+                        viewHeight = $(window).height();
+                    timer = setInterval(function() {
+                        var speed = Math.floor(-hiddenHeight/3);
+                        hiddenHeight = hiddenHeight + speed;
+                        $(window).scrollTop(hiddenHeight);
+                        isTop = true;
+                        if (hiddenHeight == 0) {
+                            clearInterval(timer);
+                        }
+                    },30);
+                });
+            }
+            $(document).ready(function(){
+                addEvents();
+                getArticleTypes();
+            });
+        </script>
+    </body>
+</html>
