@@ -130,7 +130,7 @@
                         // console.log(hiddenHeight, viewHeight, allHeight);
                     sessionStorage.setItem('scrollTop', hiddenHeight);
                     if (!isFirstScroll) {
-                    // console.log(hiddenHeight ,viewHeight, allHeight);
+                    console.log(hiddenHeight ,viewHeight, allHeight);
                         if (hiddenHeight + viewHeight >= allHeight) {
                             // console.log('+1');
                             dataList.page = parseInt(dataList.page) + 1;
@@ -138,22 +138,22 @@
                         }
                     }
                     isFirstScroll = false;
-                    console.log(isTop);
+                    // console.log(isTop);
                     // 判断何时出现回到顶部按钮
-                    console.log(hiddenHeight, viewHeight);
+                    // console.log(hiddenHeight, viewHeight);
                     if (hiddenHeight >= viewHeight) {
                         // console.log($('#toTop').attr('display'));
                         $('#toTop').css('display', 'block');
                     }
                     // 处理返回顶部是否停止
                     if (!isTop) {
-                        console.log("in");
+                        // console.log("in");
                         clearInterval(timer);
                     }
                     isTop = false;
                 });
                 $('#toTop').on('click', function() {
-                    console.log(1);
+                    // console.log(1);
                     var hiddenHeight = $(window).scrollTop(),
                         viewHeight = $(window).height();
                     timer = setInterval(function() {
