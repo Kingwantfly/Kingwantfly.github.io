@@ -131,7 +131,7 @@
                     sessionStorage.setItem('scrollTop', hiddenHeight);
                     if (!isFirstScroll) {
                     console.log(hiddenHeight ,viewHeight, allHeight);
-                        if (hiddenHeight + viewHeight >= allHeight) {
+                        if ((hiddenHeight + viewHeight + 30) >= allHeight) {
                             // console.log('+1');
                             dataList.page = parseInt(dataList.page) + 1;
                             getArticle(dataList);
