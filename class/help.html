@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>勘工系7班</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+		<script src="dist/js/jquery.min.js"></script>
+		<script src="dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="dist/css/style.css">
+	</head>
+
+	<body>
+		<div class="result" id="outdiv">
+			<div id="indiv">
+				<img class="imgresult" id="bigimg" src="" />
+			</div>
+		</div>
+
+		<!-- Login Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">输入信息</h4>
+					</div>
+					<div class="modal-body">
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="active"><a href="#home" data-toggle="tab">注册</a></li>
+							<li><a href="#ios" data-toggle="tab">登录</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade in active" id="home">
+								<div class="row row_login">
+									<div class="row_label">
+										<label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+										<div class="col-sm-8 inputtext">
+											<input type="email" class="form-control" id="inputEmail3" placeholder="name">
+										</div>
+									</div>
+									<div class="row_label">
+										<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+										</div>
+									</div>
+									<div class="row_label">
+										<label for="inputPassword3" class="col-sm-3 control-label">确认密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="tab-pane fade" id="ios">
+								<div class="row row_login">
+									<div class="row_label">
+										<label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+										<div class="col-sm-8 inputtext">
+											<input type="email" class="form-control" id="inputEmail3" placeholder="name">
+										</div>
+									</div>
+
+									<div class="row_label">
+										<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+										</div>
+									</div>
+
+									<div class="row_label">
+										<div class="col-sm-offset-3 col-sm-8">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox"> 记住我的登录信息
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-danger register">注册</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="logo"></div>
+		</div>
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">首页 </a></li>
+							<li><a href="bar.html">贴吧</a></li>
+							<li><a href="number.html">通讯</a></li>
+							<li><a href="gallery.html">相册</a></li>
+							<li><a href="blog.html">文章</a></li>
+							<li class="hidden-xs"><a href="source.html">资源</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li data-toggle="modal" data-target="#myModal"><a href="javascript:void(0)">登陆</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div id="helpId" class="row help">
+						<div class="active col-xs-4">
+							<a href="#normalQuestion" class="thumbnail" data-toggle="tab">
+								<span class="glyphicon glyphicon-map-marker" aria-hidden="true"> 常见问题</span>
+							</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#howToUse" class="thumbnail" data-toggle="tab">
+								<span class="glyphicon glyphicon-map-marker" aria-hidden="true"> 使用技巧</span>
+							</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#websiteMap" class="thumbnail" data-toggle="tab">
+								<span class="glyphicon glyphicon-map-marker" aria-hidden="true"> 网站地图</span>
+							</a>
+						</div>
+					</div>
+					<div id="myTabContent" class="tab-content help_tabs">
+						<div class="tab-pane fade in active" id="normalQuestion">
+							<div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<h4 class="panel-title">
+        <a role="button">
+          如何访问本网站？
+        </a>
+      </h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<p>本网站可通过网络访问，<b><a href="#">点击访问</a></b></p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          如何登陆本网站？
+        </a>
+      </h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="panel-body">
+											<p>本网站虽然设有“登录”按钮，实际上并没有实现其功能，这里只完成了前端逻辑（点击后首先是注册页，点击注册按钮后自动跳转到登录页，注册和登录按钮均有成功提示）。</p>
+											<p>登录模块仅为后台提供数据接口。</p>
+											<p>此模块与本网站其他页面的评论模块的登录是两种系统，本网站所有评论区都使用的“畅言”第三方插件，是以第三方账号登录。</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          如何评论？
+        </a>
+      </h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="panel-body">
+											<p>默认评论方式为匿名评论，匿名评论需要填写验证码，以默认头像发表评论，评论后会显示随机姓名和实际地址（IP前几位）。</p>
+											<p>也可以以新浪微博和腾讯QQ的账号登录评论，评论将显示登录账号的微博或QQ头像。</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="howToUse">
+							<div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="heading4" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+										<h4 class="panel-title">
+        <a role="button">
+          快速查看课表/作业
+        </a>
+      </h4>
+									</div>
+									<div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+										<div class="panel-body">
+											<p>本网站首页正文区域，前两个模块分别是“今日课表”和“本周作业”。</p>
+											<p>“今日课表”已实现逻辑，每天0点循环当日的课表信息。点击弹出完整课表，此课表过长，直接显示会造成用户浏览不舒服，因此折叠，需要查看完整课表的用户可手动点击查看。</p>
+											<p>“本周作业”已实现逻辑，判断当前日期为本学期第几周，自动更新。也可以点击查看本学期作业，本学期每周的作业将显示在新页面中。</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="heading5" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          图片放大显示
+        </a>
+      </h4>
+									</div>
+									<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+										<div class="panel-body">
+											<p>相册和贴吧的贴子中的图片可以被点击。</p>
+											<p>其中贴吧贴子中的图片点击后是放大查看图片效果。</p>
+											<p>相册中的图片点击弹出模态框，包含放大图片显示效果及评论功能。</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="heading6" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          在移动设备/平板电脑中访问本网站
+        </a>
+      </h4>
+									</div>
+									<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+										<div class="panel-body">
+											<p>本网站使用Bootstrap3前端框架，自适应不同分辨率设备，无需手动放大页面。</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="websiteMap">
+							<embed src="img/classMap.svg" width="100%" type="image/svg+xml" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+
+					<div class="panel">
+						<!-- Default panel contents -->
+						<div class="panel-heading">班级信息</div>
+
+						<!-- List group -->
+						<ul class="list-group">
+							<li class="list-group-item">学校信息：吉林大学</li>
+							<li class="list-group-item">归属院系：建设工程学院</li>
+							<li class="list-group-item">入学年份：2014</li>
+							<li class="list-group-item">专业层次：本科</li>
+							<li class="list-group-item">学习专业：勘查技术与工程专业</li>
+							<li class="list-group-item">成员人数：30</li>
+						</ul>
+					</div>
+					<div class="panel">
+						<!-- Default panel contents -->
+						<div class="panel-heading">近期活动</div>
+
+						<!-- List group -->
+						<ul class="list-group">
+							<li class="list-group-item" onclick="window.open('pages/activity1.html','_self')">
+								<div class="row">
+									<div class="col-lg-4 col-md-5 col-xs-4">
+										<img src="img/photo/activity1.jpg" height="100" width="100" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-xs-7">
+										<p>“爱心速递”，送货上门</p>
+										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
+										<br>
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
+								</div>
+							</li>
+							<li class="list-group-item" onclick="window.open('pages/activity2.html','_self')">
+								<div class="row">
+									<div class="col-lg-4 col-md-5 col-xs-4">
+										<img src="img/photo/activity2.jpg" height="100" width="100" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-xs-7">
+										<p>吉林大学第一届全明星篮球赛盛大开幕</p>
+										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
+										<br>
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
+								</div>
+							</li>
+							<li class="list-group-item" onclick="window.open('pages/activity3.html','_self')">
+								<div class="row">
+									<div class="col-lg-4 col-md-5 col-xs-4">
+										<img src="img/photo/activity3.jpg" height="100" width="100" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-xs-7">
+										<p>2017吉林大学首届机器人大赛暨吉林大学机器人梦工场启动仪式举行</p>
+										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
+										<br>
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
+								</div>
+							</li>
+							<li class="list-group-item" onclick="window.open('pages/activity4.html','_self')">
+								<div class="row">
+									<div class="col-lg-4 col-md-5 col-xs-4">
+										<img src="img/photo/activity4.jpg" height="100" width="100" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-xs-7">
+										<p>爱心传递：大学生的别样六一</p>
+										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
+										<br>
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
+								</div>
+							</li>
+							<li class="list-group-item" onclick="window.open('pages/activity5.html','_self')">
+								<div class="row">
+									<div class="col-lg-4 col-md-5 col-xs-4">
+										<img src="img/photo/activity5.jpg" height="100" width="100" />
+									</div>
+									<div class="col-lg-7 col-md-7 col-xs-7">
+										<p>吉林大学召开第56届田径运动会</p>
+										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
+										<br>
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="panel  hidden-xs hidden-sm">
+						<!-- Default panel contents -->
+						<div class="panel-heading">标签云</div>
+						<div class="panel-body panel-items">
+							<div class="items">
+								<a href="javascript:void(0)">学校</a>
+								<a href="javascript:void(0)">作业</a>
+								<a href="javascript:void(0)">竞赛</a>
+								<a href="javascript:void(0)">聚餐</a>
+								<a href="javascript:void(0)">班会</a>
+								<a href="javascript:void(0)">认证</a>
+								<a href="javascript:void(0)">考试</a>
+								<a href="javascript:void(0)">学校</a>
+								<a href="javascript:void(0)">作业</a>
+								<a href="javascript:void(0)">竞赛</a>
+								<a href="javascript:void(0)">聚餐</a>
+								<a href="javascript:void(0)">班会</a>
+								<a href="javascript:void(0)">认证</a>
+								<a href="javascript:void(0)">考试</a>
+								<a href="javascript:void(0)">聚餐</a>
+							</div>
+						</div>
+					</div>
+					<div class="panel  hidden-xs hidden-sm">
+						<!-- Default panel contents -->
+						<div class="panel-heading">近期访客</div>
+						<div class="panel-body panel-person">
+							<img src="img/tx/tx1.png" width="23%" />
+							<img src="img/tx/tx2.png" width="23%" />
+							<img src="img/tx/tx3.png" width="23%" />
+							<img src="img/tx/tx4.png" width="23%" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer hidden-xs">
+			<div class="container">
+				<div class="row footer-top">
+					<div class="col-sm-6 col-lg-6">
+						<h3>勘工系7班网站前端模板</h3>
+						<p>本网站使用HTML5技术，Bootstrap3前端开发框架。</p>
+					</div>
+					<div class="col-sm-6  col-lg-5 col-lg-offset-1">
+						<div class="col-xs-4">
+							<h4>友情链接</h4>
+							<p><a href="http://www.jlu.edu.cn/">吉林大学</a></p>
+							<p><a href="#">wyh</a></p>
+						</div>
+						<div class="col-xs-4">
+							<h4>联系方式</h4>
+							<p><a href="javascript:void(0)" class="useLessHref">电话</a></p>
+							<p><a href="javascript:void(0)" class="useLessHref">QQ</a></p>
+						</div>
+						<div class="col-xs-4">
+							<h4>关于本站</h4>
+							<p><a href="about.html">本站信息</a></p><p><a href="help.html">帮助</a></p>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row footer-bottom">
+					<p>©2017 wyh All Rights Reserved 吉ICP备15005459号</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="dist/js/app.js"></script>
+	</body>
+
+</html>

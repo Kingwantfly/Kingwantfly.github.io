@@ -1,0 +1,555 @@
+body {
+	font-family: arial, "microsoft yahei";
+	background-color: #f5f5f5;
+	color: #2C3E50;
+}
+a{
+	color: #2C3E50;
+}
+span {
+	vertical-align: text-top;
+}
+.thumbnail_video{
+	text-align: center;
+}
+.musicPlayer{
+	width: 100%;
+	border-radius: 0;
+}
+.header {
+	padding: 10px 0 20px;
+	background-color: #E74C3C;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.logo {
+	display: block;
+	height: 160px;
+	width: 160px;
+	margin: 0 auto;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	background: url(../../img/tx/class.png) no-repeat center;
+	background-size: 160px 160px;
+}
+
+
+/*loginbar*/
+
+.modal-content {
+	border-radius: 0;
+}
+.modal-header {
+	background-color: #E74C3C;
+	color: #fff;
+}
+.row_login{
+	margin-top: -2em;
+}
+.row_label{
+	padding-top: 3em;
+}
+
+
+/*nav*/
+
+.navbar-nav>li {
+	margin-right: 20px;
+}
+
+nav.navbar-inverse {
+	min-height: none;
+	color: #ccc;
+	background-color: #34495E;
+	border: none;
+	border-radius: 0 !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #ddd;
+	background: #34495E;
+	transition: color 0.4s, background 0.4s;
+	-moz-transition: color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: color 0.4s, background 0.4s;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+	color: #fff;
+	background-color: #2C3E50;
+}
+
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover {
+	color: #fff;
+	background: #2C3E50;
+}
+
+
+/*well*/
+
+.well {
+	border-radius: 0;
+}
+
+.post {
+	position: relative;
+	background-color: #fff;
+	padding: 0 20px 20px 20px;
+	margin-bottom: 20px;
+	border-left: 1px solid #ffffff;
+	transition: border-color 0.4s, background 0.4s;
+	-moz-transition: border-color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: border-color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: border-color 0.4s, background 0.4s;
+}
+
+.post:hover {
+	border-left: 1px solid #E74C3C;
+	background-color: #fefefe;
+}
+
+.post-courselist {
+	padding-bottom: 0;
+}
+
+.label-index {
+	border-radius: 0 !important;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: #E74C3C;
+}
+
+.well-bar {
+	padding-top: 20px;
+}
+
+
+/*table*/
+
+.table {
+	text-align: center;
+}
+
+th {
+	background-color: #E74C3C;
+	color: #fff;
+	font-weight: normal;
+}
+
+.tr {
+	width: 10px;
+}
+
+td {
+	background: #fff;
+	transition: background 0.4s, color 0.4s;
+	-moz-transition: background 0.4s, color 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: background 0.4s, color 0.4s;
+	/* Safari and Chrome */
+	-o-transition: background 0.4s, color 0.4s;
+	/* Opera */
+}
+
+td:hover {
+	background: #E74C3C;
+	color: #fff;
+}
+
+th {
+	width: 12.5%;
+}
+
+.btn-courselist {
+	color: #fff;
+	background-color: #E74C3C;
+	border-color: #C0392B;
+	margin-top: 20px;
+	width: 100%;
+	transition: color 0.4s, background 0.4s;
+	-moz-transition: color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: color 0.4s, background 0.4s;
+}
+
+.btn-courselist.focus,
+.btn-courselist:focus {
+	color: #fff;
+	background-color: #C0392B;
+	border-color: #C0392B;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: #C0392B;
+	border-color: #C0392B;
+}
+
+
+/*panel*/
+
+.panel {
+	border-radius: 0;
+}
+
+.panel-heading {
+	background-color: #E74C3C;
+	color: #fff;
+	border-radius: 0;
+}
+
+.list-group-item {
+	color: #666;
+	background-color: #fff;
+	transition: color 0.4s, background 0.4s;
+	-moz-transition: color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: color 0.4s, background 0.4s;
+	cursor: pointer;
+}
+
+.list-group-item:hover {
+	color: #fff;
+	background-color: #34495E;
+}
+
+.panel-items {
+	padding: 0;
+}
+
+.items {
+	overflow: hidden;
+	padding: 15px 0 12px 15px;
+}
+
+.items a {
+	color: #999;
+	background-color: #eee;
+	float: left;
+	width: 31.3333%;
+	margin: 0 1% 1% 0;
+	padding: 0 8px;
+	font-size: 12px;
+	height: 29px;
+	line-height: 29px;
+	overflow: hidden;
+	text-decoration: none;
+	transition: all 0.25s;
+	transition-property: all;
+	transition-duration: 0.25s;
+	transition-timing-function: initial;
+	transition-delay: initial;
+}
+
+.items a:hover {
+	background-color: #34495E;
+	color: #ffffff;
+}
+
+.panel-person img {
+	overflow: hidden;
+	border-radius: 50%;
+	-moz-transition: -moz-transform 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: -webkit-transform 0.4s;
+	/* Safari and Chrome */
+	-o-transition: -o-transform 0.4s;
+	/* Opera */
+}
+
+.panel img:hover {
+	border: 3px solid #2C3E50;
+	transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	/* Firefox 4 */
+	-webkit-transform: rotate(360deg);
+	/* Safari and Chrome */
+	-o-transform: rotate(360deg);
+	/* Opera */
+}
+
+
+/* footer */
+
+.footer {
+	color: #777;
+	padding: 30px 0;
+	border-top: 1px solid #e5e5e5;
+	margin-top: 70px;
+}
+
+.footer-bottom {
+	text-align: center;
+}
+
+.footer a {
+	text-decoration: none;
+	color: #777;
+	transition: color 0.4s, background 0.4s;
+	-moz-transition: color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: color 0.4s, background 0.4s;
+}
+
+.footer a:hover {
+	text-decoration: none;
+	color: #E74C3C;
+}
+.footer .useLessHref {
+	text-decoration: none;
+	color: #777;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: all 0.4s;
+	/* Safari and Chrome */
+	-o-transition: all 0.4s;
+}
+.footer .useLessHref:hover {
+	text-decoration: line-through;
+	color: #E74C3C;
+}
+
+/*bar*/
+.well-bar{
+	cursor: pointer;
+	margin-bottom: 0;
+	transition: background 0.4s, color 0.4s;
+	-moz-transition: background 0.4s, color 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: background 0.4s, color 0.4s;
+	/* Safari and Chrome */
+	-o-transition: background 0.4s, color 0.4s;
+	/* Opera */
+}
+.well-bar:hover{
+	background-color: #fff6f6;
+}
+.row-bar {
+	padding: 0 15px;
+}
+
+.bar-userhead {
+	padding: 0;
+}
+
+.row-bar h4 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.row-bar h5 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.row-bar .col-xs-4 {
+	padding-left: 0;
+}
+.row-bar .col-sm-3 {
+	padding-left: 0;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span{
+	color: #2C3E50;
+	border: 2px solid #2C3E50;
+	border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span{
+	color: #2C3E50;
+	border: 2px solid #2C3E50;
+	border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.pagination>li>a, .pagination>li>span{
+	color: #2C3E50;
+	border: 2px solid #2C3E50;
+	margin-right: 10px;
+	transition: color 0.4s, background 0.4s;
+	-moz-transition: color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: color 0.4s, background 0.4s;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+    z-index: 3;
+    color: #fff;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
+
+/*show big img*/
+.result {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.imgresult {
+	border: 5px solid #fff;
+}
+
+#indiv {
+	position: absolute;
+}
+
+/*gallery*/
+.thumbnail{
+	border-radius: 0px;
+    text-decoration: none;
+    color: #777;
+}
+a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
+    border-color: #2C3E50;
+    text-decoration: none;
+    color: #2C3E50;
+}
+.thumbnail h5{
+	text-decoration: none;
+}
+#showimglist img{
+	width: 100%;
+}
+
+/*source*/
+.panel-source a{
+	text-decoration: none;
+}
+.panel-source .panel-heading{
+	cursor: pointer;
+}
+.list-group-item-last{
+	text-align: center;
+}
+
+/*blog*/
+.well-blog{
+	background-color: #ffffff;
+}
+.label-blog{
+	border-radius: 0 !important;
+	padding: 5px 10px;
+	font-weight: normal;
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: #2C3E50;
+}
+.blog-header{
+	margin-bottom: 20px;
+}
+.blog-body{
+	padding-bottom: 2em;
+}
+.blog-body img{
+	text-align: center;
+	max-width: 100%;
+	max-height: 400px;
+	margin-bottom: 20px;
+	border: 2px solid #EEEEEE;
+	transition: border-color 0.4s, background 0.4s;
+	-moz-transition: border-color 0.4s, background 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: border-color 0.4s, background 0.4s;
+	/* Safari and Chrome */
+	-o-transition: border-color 0.4s, background 0.4s;
+}/*best size of img is 710px*400px */
+.blog-body img:hover{
+	border-color: #2C3E50;
+}
+.blog-body p{
+	text-indent: 2em;
+}
+.post-blog a{
+	text-decoration: none;
+	cursor: pointer;
+	color: #2C3E50;
+	transition: color 0.4s;
+	-moz-transition: color 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: color 0.4s;
+	/* Safari and Chrome */
+	-o-transition: color 0.4s;
+}
+.post-blog a:hover{
+	color: #E74C3C;
+}
+
+/* help */
+.help{
+	text-align: center;
+}
+.help_tabs a{
+	text-decoration: none;
+}
+.help_tabs p{
+	text-indent: 2em;
+}
+.help span{
+	margin: 10px auto;
+	vertical-align: 90%;
+}
+.help .thumbnail{
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: all 0.4s;
+	/* Safari and Chrome */
+	-o-transition: all 0.4s;
+}
+.help .thumbnail:hover{
+	color: #eee;
+	background-color: #2C3E50;
+}
+.help_tabs .panel-heading{
+	color: #2C3E50;
+	cursor: pointer;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	/* Firefox 4 */
+	-webkit-transition: all 0.4s;
+	/* Safari and Chrome */
+	-o-transition: all 0.4s;
+}
+.help_tabs .panel-heading:hover{
+	color: #eee;
+	background-color: #2C3E50;
+}
+
