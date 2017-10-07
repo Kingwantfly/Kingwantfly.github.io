@@ -8,22 +8,15 @@
 		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 		<script src="dist/js/jquery.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
-		<!-- if ie -->
-		<script type="text/javascript">
-			var Sys = {};
-			var ua = navigator.userAgent.toLowerCase();
-			if (window.ActiveXObject) {
-				Sys.ie = ua.match(/msie ([\d.]+)/)[1]
-				if (Sys.ie <= 7) {
-					alert('您目前的IE版本为' + Sys.ie + '版本太低，请升级！');
-					window.open('ie67.html', '_self');
-				}
-			}
-		</script>
 		<link rel="stylesheet" href="dist/css/style.css">
 	</head>
 
 	<body>
+		<div class="result" id="outdiv">
+			<div id="indiv">
+				<img class="imgresult" id="bigimg" src="" />
+			</div>
+		</div>
 
 		<!-- Login Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -118,7 +111,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="javascript:void(0)">首页</a></li>
+							<li><a href="index.html">首页 </a></li>
 							<li><a href="bar.html">贴吧</a></li>
 							<li><a href="number.html">通讯</a></li>
 							<li><a href="gallery.html">相册</a></li>
@@ -134,346 +127,132 @@
 				<!-- /.container-fluid -->
 			</div>
 		</nav>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<div class="well post post-courselist">
-						<span class="label label-index">课程</span>
-						<h3>今日课表</h3>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/r3.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p id="courselist-today">
-
-								</p>
-							</div>
+					<div id="helpId" class="row help">
+						<div class="active col-xs-4">
+							<a href="#normalQuestion" class="thumbnail" data-toggle="tab">
+								<span class="glyphicon glyphicon-map-marker" aria-hidden="true"> 常见问题</span>
+							</a>
 						</div>
-						<a class="btn btn-primary btn-courselist open1" role="button" data-toggle="collapse" href="#btn-courelist" aria-expanded="false" aria-controls="btn-courelist">
-							<span class="glyphicon glyphicon-chevron-down"><span>  点击弹出完整课程表</span></span>
-						</a>
-						<div class="table-responsive collapse" id="btn-courelist">
-							<table class="table table-bordered">
-								<tr class="tr">
-									<th class="row cell row1 cell1"> </th>
-									<th class="row cell row1 cell2">周一</th>
-									<th class="row cell row1 cell3">周二</th>
-									<th class="row cell row1 cell4">周三</th>
-									<th class="row cell row1 cell5">周四</th>
-									<th class="row cell row1 cell6">周五</th>
-									<th class="row cell row1 cell7">周六</th>
-									<th class="row cell row1 cell8">周日</th>
-								</tr>
-								<tr>
-									<td style="padding-top: 40px;">
-										<p>8:00
-											<br>1</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td rowspan="2">
-										<p>岩土工程施工
-											<br>专必
-											<br>程静
-											<br> @25-708
-										</p>
-									</td>
-									<td></td>
-									<td rowspan="3">
-										<p>岩土工程施工
-											<br>专必
-											<br>程静
-											<br> @08-608
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>8:50
-											<br>2</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>9:40
-											<br>3</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td rowspan="3">
-										<p>金属工艺学
-											<br>专必
-											<br>何国斌
-											<br> @26-304
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>10:40
-											<br>4</p>
-									</td>
-									<td rowspan="2">
-										<p>流体力学
-											<br>专选
-											<br>陈睿
-											<br> @08-602
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>机械制图
-											<br>专选
-											<br>曹严元
-											<br> @09-507
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>液压传动
-											<br>专选
-											<br>任柯
-											<br> @09-407
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>岩石力学
-											<br>专选
-											<br>刘红俊
-											<br> @08-608
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>11:30
-											<br>5</p>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>12:10~2:30
-											<br>6~7</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>14:30
-											<br>8</p>
-									</td>
-									<td></td>
-									<td rowspan="2">
-										<p>建筑材料
-											<br>专选
-											<br>王峻
-											<br> @25-913
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>岩石力学
-											<br>专选
-											<br>刘红俊
-											<br> @25-602
-										</p>
-									</td>
-									<td rowspan="3">
-										<p>金属工艺学
-											<br>专选
-											<br>陈坚
-											<br> @09-404
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>15:20
-											<br>9</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>16:10
-											<br>10</p>
-									</td>
-									<td></td>
-									<td rowspan="2">
-										<p>建筑材料
-											<br>专选
-											<br>王峻
-											<br> @08-306
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>16:50
-											<br>11</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>19:00
-											<br>12</p>
-									</td>
-									<td rowspan="3">
-										<p>流体力学
-											<br>专选
-											<br>陈睿
-											<br> @25-708
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td rowspan="2">
-										<p>机械制图
-											<br>专选
-											<br>曹严元
-											<br> @25-607
-										</p>
-									</td>
-									<td></td>
-									<td rowspan="2">
-										<p>液压传动
-											<br>专选
-											<br>任柯
-											<br> @25-607
-										</p>
-									</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>19:50
-											<br>13</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>20:30
-											<br>14</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-							</table>
+						<div class="col-xs-4">
+							<a href="#howToUse" class="thumbnail" data-toggle="tab">
+								<span class="glyphicon glyphicon-map-marker" aria-hidden="true"> 使用技巧</span>
+							</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#websiteMap" class="thumbnail" data-toggle="tab">
+								<span class="glyphicon glyphicon-map-marker" aria-hidden="true"> 网站地图</span>
+							</a>
 						</div>
 					</div>
-
-					<div class="well post post-courselist index-homework">
-						<span class="label label-index">作业</span>
-						<h3 id="thisWeeksNum">本周作业</h3>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/r2_s.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p>
-								</p>
-							</div>
-						</div>
-						<a class="btn btn-primary btn-courselist" role="button" href="homework.html">
-
-							<span class="glyphicon glyphicon-eye-open"><span style="vertical-align: text-top;">  点击查看本学期作业</span></span>
-						</a>
-
-					</div>
-
-					<div class="well post post-blog">
-						<span class="label label-index">日志</span>
-						<a href="pages/blog1.html"><h3>热烈祝贺2014级勘工系7班荣获优秀班集体</h3></a>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/blogimg.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p>
-									在2014~2017年度第二学期计算机与信息科学学院 软件学院优秀班集体竞选中，我班荣获“年度优秀班集体”称号！
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="well post post-blog">
-						<span class="label label-index">活动</span>
-						<a href="pages/activity1.html"><h3>“爱心速递”，送货上门</h3></a>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/activity1.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p>
-									2017年6月14、15日，我院及时雨志愿者服务队，秉承传递爱心
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="well post post-blog">
-						<span class="label label-index">活动</span>
-						<a href="pages/activity2.html"><h3>吉林大学第一届全明星篮球赛盛大开幕</h3></a>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/activity2.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p>
-									吉林大学第一届全明星篮球赛于2017年6月15号下午
-								</p>
+					<div id="myTabContent" class="tab-content help_tabs">
+						<div class="tab-pane fade in active" id="normalQuestion">
+							<div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<h4 class="panel-title">
+        <a role="button">
+          如何访问本网站？
+        </a>
+      </h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<p>本网站可通过网络访问，<b><a href="#">点击访问</a></b></p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          如何登陆本网站？
+        </a>
+      </h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="panel-body">
+											<p>本网站虽然设有“登录”按钮，实际上并没有实现其功能，这里只完成了前端逻辑（点击后首先是注册页，点击注册按钮后自动跳转到登录页，注册和登录按钮均有成功提示）。</p>
+											<p>登录模块仅为后台提供数据接口。</p>
+											<p>此模块与本网站其他页面的评论模块的登录是两种系统，本网站所有评论区都使用的“畅言”第三方插件，是以第三方账号登录。</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          如何评论？
+        </a>
+      </h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="panel-body">
+											<p>默认评论方式为匿名评论，匿名评论需要填写验证码，以默认头像发表评论，评论后会显示随机姓名和实际地址（IP前几位）。</p>
+											<p>也可以以新浪微博和腾讯QQ的账号登录评论，评论将显示登录账号的微博或QQ头像。</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
+						<div class="tab-pane fade" id="howToUse">
+							<div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="heading4" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+										<h4 class="panel-title">
+        <a role="button">
+          快速查看课表/作业
+        </a>
+      </h4>
+									</div>
+									<div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+										<div class="panel-body">
+											<p>本网站首页正文区域，前两个模块分别是“今日课表”和“本周作业”。</p>
+											<p>“今日课表”已实现逻辑，每天0点循环当日的课表信息。点击弹出完整课表，此课表过长，直接显示会造成用户浏览不舒服，因此折叠，需要查看完整课表的用户可手动点击查看。</p>
+											<p>“本周作业”已实现逻辑，判断当前日期为本学期第几周，自动更新。也可以点击查看本学期作业，本学期每周的作业将显示在新页面中。</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="heading5" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          图片放大显示
+        </a>
+      </h4>
+									</div>
+									<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+										<div class="panel-body">
+											<p>相册和贴吧的贴子中的图片可以被点击。</p>
+											<p>其中贴吧贴子中的图片点击后是放大查看图片效果。</p>
+											<p>相册中的图片点击弹出模态框，包含放大图片显示效果及评论功能。</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="heading6" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+										<h4 class="panel-title">
+        <a class="collapsed" role="button">
+          在移动设备/平板电脑中访问本网站
+        </a>
+      </h4>
+									</div>
+									<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+										<div class="panel-body">
+											<p>本网站使用Bootstrap3前端框架，自适应不同分辨率设备，无需手动放大页面。</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="websiteMap">
+							<embed src="img/classMap.svg" width="100%" type="image/svg+xml" />
+						</div>
 					</div>
-
 				</div>
+
 				<div class="col-md-4">
 
 					<div class="panel">
@@ -482,9 +261,7 @@
 
 						<!-- List group -->
 						<ul class="list-group">
-							<li class="list-group-item">
-								学校信息：吉林大学
-							</li>
+							<li class="list-group-item">学校信息：吉林大学</li>
 							<li class="list-group-item">归属院系：建设工程学院</li>
 							<li class="list-group-item">入学年份：2014</li>
 							<li class="list-group-item">专业层次：本科</li>
@@ -627,14 +404,6 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			$('#btn-courelist').on('hidden.bs.collapse', function() {
-				$('.open1').html('<span class="glyphicon glyphicon-chevron-down">点击弹出完整课程表</span>');
-			})
-			$('#btn-courelist').on('shown.bs.collapse', function() {
-				$('.open1').html('<span class="glyphicon glyphicon-chevron-up">收起</span>')
-			})
-		</script>
 
 		<script src="dist/js/app.js"></script>
 	</body>

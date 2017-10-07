@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>勘工系7班</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+		<script src="dist/js/jquery.min.js"></script>
+		<script src="dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="dist/css/style.css">
+	</head>
+
+	<body>
+		<!-- Login Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">输入信息</h4>
+					</div>
+					<div class="modal-body">
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="active"><a href="#home" data-toggle="tab">注册</a></li>
+							<li><a href="#ios" data-toggle="tab">登录</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade in active" id="home">
+								<div class="row row_login">
+									<div class="row_label">
+										<label for="inputEmailx" class="col-sm-x control-label">用户名</label>
+										<div class="col-sm-8 inputtext">
+											<input type="email" class="form-control" id="inputEmailx" placeholder="name">
+										</div>
+									</div>
+									<div class="row_label">
+										<label for="inputPasswordx" class="col-sm-x control-label">密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPasswordx" placeholder="Password">
+										</div>
+									</div>
+									<div class="row_label">
+										<label for="inputPasswordx" class="col-sm-x control-label">确认密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPasswordx" placeholder="Password">
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="tab-pane fade" id="ios">
+								<div class="row row_login">
+									<div class="row_label">
+										<label for="inputEmailx" class="col-sm-x control-label">用户名</label>
+										<div class="col-sm-8 inputtext">
+											<input type="email" class="form-control" id="inputEmailx" placeholder="name">
+										</div>
+									</div>
+
+									<div class="row_label">
+										<label for="inputPasswordx" class="col-sm-x control-label">密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPasswordx" placeholder="Password">
+										</div>
+									</div>
+
+									<div class="row_label">
+										<div class="col-sm-offset-x col-sm-8">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox"> 记住我的登录信息
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-danger register">注册</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="logo"></div>
+		</div>
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">首页 </a></li>
+							<li><a href="bar.html">贴吧</a></li>
+							<li class="active"><a href="javascript:void(0)">通讯</a></li>
+							<li><a href="gallery.html">相册</a></li>
+							<li><a href="blog.html">文章</a></li>
+							<li class="hidden-xs"><a href="source.html">资源</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li data-toggle="modal" data-target="#myModal"><a href="javascript:void(0)">登陆</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+		</nav>
+		<div class="container">
+						<div class="well post post-courselist">
+				<span class="label label-index">tips</span>
+				<hx>点击查看教师通讯录</hx>
+<a class="btn btn-primary btn-courselist open1" role="button" data-toggle="collapse" href="#btn-courelist" aria-expanded="false" aria-controls="btn-courelist">
+							<span class="glyphicon glyphicon-chevron-down"><span>  点击弹出教师通讯录</span></span>
+						</a>
+						<div class="table-responsive collapse" id="btn-courelist">
+							<table class="table table-bordered">
+								<tr class="tr">
+						<th class="row cell row1">序号</th>
+						<th class="row cell row1">姓名</th>
+						<th class="row cell row1">学科</th>
+						<th class="row cell row1">联系方式</th>
+						<th class="row cell row1">性别</th>
+						<th class="row cell row1">邮箱</th>
+								</tr>
+					<tr>
+						<td>1</td>
+						<td>贾瑞</td>
+						<td>辅导员</td>
+						<td>1x00x12x12x1</td>
+						<td>男</td>
+						<td>jiarui@qq.com</td>
+					</tr>
+							</table>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tr class="tr">
+						<th class="row cell row1">序号</th>
+						<th class="row cell row1">学号</th>
+						<th class="row cell row1">姓名</th>
+						<th class="row cell row1">性别</th>
+						<th class="row cell row1">联系方式</th>
+					</tr>
+			<tr>
+				<td>1</td>
+				<td>xx2014x21210001</td>
+				<td>金浩</td>
+				<td>男</td>
+				<td>15x20470xx5</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>xx2014x21210004</td>
+				<td>邓白龙</td>
+				<td>男</td>
+				<td>1502x05192x</td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td>xx2014x21210005</td>
+				<td>马春荣</td>
+				<td>男</td>
+				<td>1x4x059xx14</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>xx2014x21210007</td>
+				<td>张钰</td>
+				<td>男</td>
+				<td>15620x00170</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>xx2014x21210017</td>
+				<td>杨波</td>
+				<td>男</td>
+				<td>1888xx08562</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>xx2014x21210018</td>
+				<td>邱健</td>
+				<td>男</td>
+				<td>1888xx4xx70</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>xx2014x21210020</td>
+				<td>陈康</td>
+				<td>男</td>
+				<td>1888xx25804</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>xx2014x21210024</td>
+				<td>王宇航</td>
+				<td>男</td>
+				<td>1888xxx9779</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>xx2014x21210026</td>
+				<td>唐江涛</td>
+				<td>男</td>
+				<td>15696508x19</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>xx2014x21210027</td>
+				<td>李博</td>
+				<td>男</td>
+				<td>1888xx87462</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>xx2014x21210029</td>
+				<td>黄俊</td>
+				<td>男</td>
+				<td>1888xx72016</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>xx2014x212100x0</td>
+				<td>洪泽澎</td>
+				<td>男</td>
+				<td>1888xxx8x42</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>xx2014x212100x7</td>
+				<td>马千雯</td>
+				<td>女</td>
+				<td>1888xx88728</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>xx2014x21210044</td>
+				<td>王春雨</td>
+				<td>女</td>
+				<td>15025659711</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>xx2014x21210049</td>
+				<td>周露</td>
+				<td>女</td>
+				<td>1x896417x79</td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td>xx2014x21210057</td>
+				<td>陈杰</td>
+				<td>男</td>
+				<td>1xx20249597</td>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td>xx2014x21210059</td>
+				<td>冯磊</td>
+				<td>男</td>
+				<td>18996149757</td>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td>xx2014x2121006x</td>
+				<td>雷先强</td>
+				<td>男</td>
+				<td>1888xx28859</td>
+			</tr>
+			<tr>
+				<td>19</td>
+				<td>xx2014x2121007x</td>
+				<td>舒运凯</td>
+				<td>男</td>
+				<td>1888xx402x7</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>xx2014x21210081</td>
+				<td>向渝</td>
+				<td>男</td>
+				<td>1x7x08xx506</td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td>xx2014x21210084</td>
+				<td>张媛雨</td>
+				<td>女</td>
+				<td>15802xx7x06</td>
+			</tr>
+			<tr>
+				<td>22</td>
+				<td>xx2014x21210085</td>
+				<td>何佩芸</td>
+				<td>女</td>
+				<td>1x98x287192</td>
+			</tr>
+			<tr>
+				<td>23</td>
+				<td>xx2014x21210086</td>
+				<td>胡楚娇</td>
+				<td>女</td>
+				<td>1888xx7202x</td>
+			</tr>
+			<tr>
+				<td>24</td>
+				<td>xx2014x21210089</td>
+				<td>原恺涓</td>
+				<td>女</td>
+				<td>1888xx2x198</td>
+			</tr>
+			<tr>
+				<td>25</td>
+				<td>xx2014x21210090</td>
+				<td>苏群</td>
+				<td>女</td>
+				<td>1888xx25578</td>
+			</tr>
+			<tr>
+				<td>26</td>
+				<td>xx2014x21210091</td>
+				<td>焦羽菲</td>
+				<td>女</td>
+				<td>1x098792849</td>
+			</tr>
+			<tr>
+				<td>27</td>
+				<td>xx2014x21210092</td>
+				<td>侯瑄</td>
+				<td>女</td>
+				<td>1888xx81816</td>
+			</tr>
+			<tr>
+				<td>28</td>
+				<td>xx2014x2121009x</td>
+				<td>刘敏</td>
+				<td>女</td>
+				<td>1888xx72657</td>
+			</tr>
+			<tr>
+				<td>29</td>
+				<td>xx2014x21210098</td>
+				<td>陈芦园</td>
+				<td>女</td>
+				<td>18509xx7x60</td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>xx2014x21210099</td>
+				<td>耿嘉晨</td>
+				<td>女</td>
+				<td>1888xx42x06</td>
+			</tr>
+
+				</table>
+			</div>
+			</div>
+
+		<div class="footer hidden-xs">
+			<div class="container">
+				<div class="row footer-top">
+					<div class="col-sm-6 col-lg-6">
+						<hx>勘工系7班网站前端模板</hx>
+						<p>本网站使用HTML5技术，Bootstrapx前端开发框架。</p>
+					</div>
+					<div class="col-sm-6  col-lg-5 col-lg-offset-1">
+						<div class="col-xs-4">
+							<h4>友情链接</h4>
+							<p><a href="http://www.jlu.edu.cn/">吉林大学</a></p>
+							<p><a href="#">wyh</a></p>
+						</div>
+						<div class="col-xs-4">
+							<h4>联系方式</h4>
+							<p><a href="javascript:void(0)" class="useLessHref">电话</a></p>
+							<p><a href="javascript:void(0)" class="useLessHref">QQ</a></p>
+						</div>
+						<div class="col-xs-4">
+							<h4>关于本站</h4>
+							<p><a href="about.html">本站信息</a></p><p><a href="help.html">帮助</a></p>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row footer-bottom">
+					<p>©2017 wyh All Rights Reserved 吉ICP备15005459号</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#btn-courelist').on('hidden.bs.collapse', function () {
+			$('.open1').html('<span class="glyphicon glyphicon-chevron-down">点击弹出教师通讯录</span>');
+		})
+			$('#btn-courelist').on('shown.bs.collapse', function () {
+			$('.open1').html('<span class="glyphicon glyphicon-chevron-up">收起</span>')
+		})
+		</script>
+
+	<script src="dist/js/app.js"></script></body>
+
+</html>

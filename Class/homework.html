@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>本学期作业</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+		<script src="dist/js/jquery.min.js"></script>
+		<script src="dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="dist/css/style.css">
+	</head>
+
+	<body>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">输入信息</h4>
+					</div>
+					<div class="modal-body">
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="active"><a href="#home" data-toggle="tab">注册</a></li>
+							<li><a href="#ios" data-toggle="tab">登录</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade in active" id="home">
+								<div class="row row_login">
+									<div class="row_label">
+										<label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+										<div class="col-sm-8 inputtext">
+											<input type="email" class="form-control" id="inputEmail3" placeholder="name">
+										</div>
+									</div>
+									<div class="row_label">
+										<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+										</div>
+									</div>
+									<div class="row_label">
+										<label for="inputPassword3" class="col-sm-3 control-label">确认密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="tab-pane fade" id="ios">
+								<div class="row row_login">
+									<div class="row_label">
+										<label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+										<div class="col-sm-8 inputtext">
+											<input type="email" class="form-control" id="inputEmail3" placeholder="name">
+										</div>
+									</div>
+
+									<div class="row_label">
+										<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+										<div class="col-sm-8 inputtext">
+											<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+										</div>
+									</div>
+
+									<div class="row_label">
+										<div class="col-sm-offset-3 col-sm-8">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox"> 记住我的登录信息
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-danger register">注册</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo"></div>
+		</div>
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">首页 </a></li>
+							<li><a href="bar.html">贴吧</a></li>
+							<li><a href="number.html">通讯</a></li>
+							<li><a href="gallery.html">相册</a></li>
+							<li><a href="blog.html">文章</a></li>
+							<li class="hidden-xs"><a href="source.html">资源</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li data-toggle="modal" data-target="#myModal"><a href="javascript:void(0)">登陆</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+		</nav>
+		<div class="container">
+			<div class="well post">
+				<span class="label label-index">tips</span>
+				<h3 id="thisWeeksNumTips">温馨提示：本周是</h3>
+
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered table-homework">
+					<tr class="tr">
+						<th class="row cell row1"> </th>
+						<th class="row cell row1">钻井液工艺学</th>
+						<th class="row cell row1">岩土工程设计</th>
+						<th class="row cell row1">材料力学</th>
+						<th class="row cell row1">工程技术经济</th>
+						<th class="row cell row1">机械设计基础</th>
+						<th class="row cell row1">理论力学</th>
+						<th class="row cell row1">测量学B</th>
+					</tr>
+					<tr>
+						<td><h4>第一周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第二周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第三周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第四周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第五周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第六周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第七周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第八周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第九周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十一周</h4></td>
+						<td>工程测量（四周时间）</td>
+						<td>岩土工程设计，岩石和土的应力变化</td>
+						<td>材料力学考试（具体时间看老师）</td>
+						<td>工程技术经济作业题，第11周上交</td>
+						<td></td>
+						<td>5个人一组，讲解第五章第六章或者书上的对应习题</td>
+						<td>参照教学方案</td>
+					</tr>
+					<tr>
+						<td><h4>第十二周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十三周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十四周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十五周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十六周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十七周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十八周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><h4>第十九周</h4></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+
+		<div class="footer hidden-xs">
+			<div class="container">
+				<div class="row footer-top">
+					<div class="col-sm-6 col-lg-6">
+						<h3>勘工系7班网站前端模板</h3>
+						<p>本网站使用HTML5技术，Bootstrap3前端开发框架。</p>
+					</div>
+					<div class="col-sm-6  col-lg-5 col-lg-offset-1">
+						<div class="col-xs-4">
+							<h4>友情链接</h4>
+							<p><a href="http://www.jlu.edu.cn/">吉林大学</a></p>
+							<p><a href="#">wyh</a></p>
+						</div>
+						<div class="col-xs-4">
+							<h4>联系方式</h4>
+							<p><a href="javascript:void(0)" class="useLessHref">电话</a></p>
+							<p><a href="javascript:void(0)" class="useLessHref">QQ</a></p>
+						</div>
+						<div class="col-xs-4">
+							<h4>关于本站</h4>
+							<p><a href="about.html">本站信息</a></p><p><a href="help.html">帮助</a></p>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row footer-bottom">
+					<p>©2017 wyh All Rights Reserved 吉ICP备15005459号</p>
+				</div>
+			</div>
+		</div>
+
+	<script src="dist/js/app.js"></script></body>
+
+</html>

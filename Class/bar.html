@@ -3,27 +3,21 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>勘工系7班</title>
+		<title>勘工班</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 		<script src="dist/js/jquery.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
-		<!-- if ie -->
-		<script type="text/javascript">
-			var Sys = {};
-			var ua = navigator.userAgent.toLowerCase();
-			if (window.ActiveXObject) {
-				Sys.ie = ua.match(/msie ([\d.]+)/)[1]
-				if (Sys.ie <= 7) {
-					alert('您目前的IE版本为' + Sys.ie + '版本太低，请升级！');
-					window.open('ie67.html', '_self');
-				}
-			}
-		</script>
 		<link rel="stylesheet" href="dist/css/style.css">
+		<script src="dist/js/showBigPhoto.js"></script>
 	</head>
 
 	<body>
+		<div class="result" id="outdiv">
+			<div id="indiv">
+				<img class="imgresult" id="bigimg" src="" />
+			</div>
+		</div>
 
 		<!-- Login Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -118,8 +112,8 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="javascript:void(0)">首页</a></li>
-							<li><a href="bar.html">贴吧</a></li>
+							<li><a href="index.html">首页 </a></li>
+							<li class="active"><a href="javascript:void(0)">贴吧</a></li>
 							<li><a href="number.html">通讯</a></li>
 							<li><a href="gallery.html">相册</a></li>
 							<li><a href="blog.html">文章</a></li>
@@ -134,346 +128,136 @@
 				<!-- /.container-fluid -->
 			</div>
 		</nav>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<div class="well post post-courselist">
-						<span class="label label-index">课程</span>
-						<h3>今日课表</h3>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/r3.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p id="courselist-today">
+			<div class="well post">
+				<span class="label label-index">tips</span>
+				<h3>用户可以通过QQ/微博/游客方式登录评论</h3>
 
-								</p>
+			</div>
+					<div class="well post well-bar" onclick="window.open('pages/bartest1.html','_self')">
+						<div class="row row-bar">
+							<div class="col-sm-2 col-xs-3 bar-userhead">
+								<img class="bar-userheadimg" width="100%" src="img/tx/tx1.png" />
 							</div>
-						</div>
-						<a class="btn btn-primary btn-courselist open1" role="button" data-toggle="collapse" href="#btn-courelist" aria-expanded="false" aria-controls="btn-courelist">
-							<span class="glyphicon glyphicon-chevron-down"><span>  点击弹出完整课程表</span></span>
-						</a>
-						<div class="table-responsive collapse" id="btn-courelist">
-							<table class="table table-bordered">
-								<tr class="tr">
-									<th class="row cell row1 cell1"> </th>
-									<th class="row cell row1 cell2">周一</th>
-									<th class="row cell row1 cell3">周二</th>
-									<th class="row cell row1 cell4">周三</th>
-									<th class="row cell row1 cell5">周四</th>
-									<th class="row cell row1 cell6">周五</th>
-									<th class="row cell row1 cell7">周六</th>
-									<th class="row cell row1 cell8">周日</th>
-								</tr>
-								<tr>
-									<td style="padding-top: 40px;">
-										<p>8:00
-											<br>1</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td rowspan="2">
-										<p>岩土工程施工
-											<br>专必
-											<br>程静
-											<br> @25-708
-										</p>
-									</td>
-									<td></td>
-									<td rowspan="3">
-										<p>岩土工程施工
-											<br>专必
-											<br>程静
-											<br> @08-608
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>8:50
-											<br>2</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>9:40
-											<br>3</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td rowspan="3">
-										<p>金属工艺学
-											<br>专必
-											<br>何国斌
-											<br> @26-304
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>10:40
-											<br>4</p>
-									</td>
-									<td rowspan="2">
-										<p>流体力学
-											<br>专选
-											<br>陈睿
-											<br> @08-602
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>机械制图
-											<br>专选
-											<br>曹严元
-											<br> @09-507
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>液压传动
-											<br>专选
-											<br>任柯
-											<br> @09-407
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>岩石力学
-											<br>专选
-											<br>刘红俊
-											<br> @08-608
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>11:30
-											<br>5</p>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>12:10~2:30
-											<br>6~7</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>14:30
-											<br>8</p>
-									</td>
-									<td></td>
-									<td rowspan="2">
-										<p>建筑材料
-											<br>专选
-											<br>王峻
-											<br> @25-913
-										</p>
-									</td>
-									<td rowspan="2">
-										<p>岩石力学
-											<br>专选
-											<br>刘红俊
-											<br> @25-602
-										</p>
-									</td>
-									<td rowspan="3">
-										<p>金属工艺学
-											<br>专选
-											<br>陈坚
-											<br> @09-404
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>15:20
-											<br>9</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>16:10
-											<br>10</p>
-									</td>
-									<td></td>
-									<td rowspan="2">
-										<p>建筑材料
-											<br>专选
-											<br>王峻
-											<br> @08-306
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>16:50
-											<br>11</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>19:00
-											<br>12</p>
-									</td>
-									<td rowspan="3">
-										<p>流体力学
-											<br>专选
-											<br>陈睿
-											<br> @25-708
-										</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td rowspan="2">
-										<p>机械制图
-											<br>专选
-											<br>曹严元
-											<br> @25-607
-										</p>
-									</td>
-									<td></td>
-									<td rowspan="2">
-										<p>液压传动
-											<br>专选
-											<br>任柯
-											<br> @25-607
-										</p>
-									</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>19:50
-											<br>13</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>
-										<p>20:30
-											<br>14</p>
-									</td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-
-					<div class="well post post-courselist index-homework">
-						<span class="label label-index">作业</span>
-						<h3 id="thisWeeksNum">本周作业</h3>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/r2_s.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p>
-								</p>
+							<div class="col-sm-8 col-xs-9 bar-username">
+								<h4>王宇航</h4>
+								<p>2017年6月21日 11:19:15</p>
 							</div>
 						</div>
-						<a class="btn btn-primary btn-courselist" role="button" href="homework.html">
-
-							<span class="glyphicon glyphicon-eye-open"><span style="vertical-align: text-top;">  点击查看本学期作业</span></span>
-						</a>
-
-					</div>
-
-					<div class="well post post-blog">
-						<span class="label label-index">日志</span>
-						<a href="pages/blog1.html"><h3>热烈祝贺2014级勘工系7班荣获优秀班集体</h3></a>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/blogimg.jpg" />
+						<div class="row row-bar">
+							<h4 style="text-overflow:ellipsis">吉林大学2014级勘工班贴吧开放
+							<span class="label label-danger">置顶</span>
+							</h4>
+							<h5>用户可以通过腾讯QQ/新浪微博/游客方式登录评论</h5>
+							<div class="col-sm-3 col-xs-4">
+								<img class="imgclass" src="img/photo/b1.jpg" width="100%" />
 							</div>
-							<div class="col-xs-8">
-								<p>
-									在2014~2017年度第二学期计算机与信息科学学院 软件学院优秀班集体竞选中，我班荣获“年度优秀班集体”称号！
-								</p>
+							<div class="col-sm-3 col-xs-4">
+								<img class="imgclass" src="img/photo/b1.jpg" width="100%" />
+							</div>
+							<div class="col-sm-3 col-xs-4">
+								<img class="imgclass" src="img/photo/b1.jpg" width="100%" />
 							</div>
 						</div>
 					</div>
-
-					<div class="well post post-blog">
-						<span class="label label-index">活动</span>
-						<a href="pages/activity1.html"><h3>“爱心速递”，送货上门</h3></a>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/activity1.jpg" />
+					<div class="well post well-bar" onclick="window.open('pages/bartest2.html','_self')">
+						<div class="row row-bar">
+							<div class="col-sm-2 col-xs-3 bar-userhead">
+								<img class="bar-userheadimg" width="100%" src="img/tx/tx2.png" />
 							</div>
-							<div class="col-xs-8">
-								<p>
-									2017年6月14、15日，我院及时雨志愿者服务队，秉承传递爱心
-								</p>
+							<div class="col-sm-8 col-xs-9 bar-username">
+								<h4>孙健</h4>
+								<p>2017年6月21日 11:36:27</p>
 							</div>
 						</div>
-					</div>
-					<div class="well post post-blog">
-						<span class="label label-index">活动</span>
-						<a href="pages/activity2.html"><h3>吉林大学第一届全明星篮球赛盛大开幕</h3></a>
-						<hr>
-						<div class="row">
-							<div class="col-xs-4">
-								<img width="100%" src="img/photo/activity2.jpg" />
-							</div>
-							<div class="col-xs-8">
-								<p>
-									吉林大学第一届全明星篮球赛于2017年6月15号下午
-								</p>
-							</div>
+						<div class="row row-bar">
+							<h4 style="text-overflow:ellipsis">孙健发的贴子孙健发的贴子孙健发的贴子</h4>
+							<h5>示例页面，请勿评论</h5>
 						</div>
 					</div>
-
+					<div class="well post well-bar" onclick="window.open('pages/bartest3.html','_self')">
+						<div class="row row-bar">
+							<div class="col-sm-2 col-xs-3 bar-userhead">
+								<img class="bar-userheadimg" width="100%" src="img/tx/tx3.png" />
+							</div>
+							<div class="col-sm-8 col-xs-9 bar-username">
+								<h4>周露</h4>
+								<p>2017年6月21日 11:36:24</p>
+							</div>
+						</div>
+						<div class="row row-bar">
+							<h4 style="text-overflow:ellipsis">周露发的贴子周露发的贴子周露发的贴子</h4>
+							<h5>示例页面，请勿评论</h5>
+						</div>
+					</div>
+					<div class="well post well-bar" onclick="window.open('pages/bartest4.html','_self')">
+						<div class="row row-bar">
+							<div class="col-sm-2 col-xs-3 bar-userhead">
+								<img class="bar-userheadimg" width="100%" src="img/tx/tx4.png" />
+							</div>
+							<div class="col-sm-8 col-xs-9 bar-username">
+								<h4>白凯</h4>
+								<p>2017年6月21日 11:36:21</p>
+							</div>
+						</div>
+						<div class="row row-bar">
+							<h4 style="text-overflow:ellipsis">白凯发的贴子白凯发的贴子白凯发的贴子</h4>
+							<h5>示例页面，请勿评论</h5>
+						</div>
+					</div>
+					<div class="well post well-bar" onclick="window.open('pages/bartest5.html','_self')">
+						<div class="row row-bar">
+							<div class="col-sm-2 col-xs-3 bar-userhead">
+								<img class="bar-userheadimg" width="100%" src="img/tx/tx2.png" />
+							</div>
+							<div class="col-sm-8 col-xs-9 bar-username">
+								<h4>deng小白</h4>
+								<p>2017年6月21日 11:36:18</p>
+							</div>
+						</div>
+						<div class="row row-bar">
+							<h4 style="text-overflow:ellipsis">deng小白发的贴子deng小白发的贴子deng小白发的贴子</h4>
+							<h5>示例页面，请勿评论</h5>
+						</div>
+					</div>
+					<div class="well post well-bar" onclick="window.open('pages/bartest6.html','_self')">
+						<div class="row row-bar">
+							<div class="col-sm-2 col-xs-3 bar-userhead">
+								<img class="bar-userheadimg" width="100%" src="img/tx/tx1.png" />
+							</div>
+							<div class="col-sm-8 col-xs-9 bar-username">
+								<h4>蔡蔡</h4>
+								<p>2017年6月21日 11:36:14</p>
+							</div>
+						</div>
+						<div class="row row-bar" onclick="window.open('pages/bartest2.html','_self')">
+							<h4 style="text-overflow:ellipsis">蔡蔡发的贴子蔡蔡发的贴子蔡蔡发的贴子</h4>
+							<h5>示例页面，请勿评论</h5>
+						</div>
+					</div>
+					<nav>
+						<ul class="pagination">
+							<li>
+								<a class="paginationbothside" href="javascript:void(0)" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+							<li class="active"><a href="javascript:void(0)">1</a></li>
+							<li><a href="javascript:void(0)">2</a></li>
+							<li><a href="javascript:void(0)">3</a></li>
+							<li><a href="javascript:void(0)">4</a></li>
+							<li><a href="javascript:void(0)">5</a></li>
+							<li>
+								<a class="paginationbothside" href="javascript:void(0)" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
 				</div>
+
 				<div class="col-md-4">
 
 					<div class="panel">
@@ -482,9 +266,7 @@
 
 						<!-- List group -->
 						<ul class="list-group">
-							<li class="list-group-item">
-								学校信息：吉林大学
-							</li>
+							<li class="list-group-item">学校信息：吉林大学</li>
 							<li class="list-group-item">归属院系：建设工程学院</li>
 							<li class="list-group-item">入学年份：2014</li>
 							<li class="list-group-item">专业层次：本科</li>
@@ -516,7 +298,7 @@
 										<img src="img/photo/activity2.jpg" height="100" width="100" />
 									</div>
 									<div class="col-lg-7 col-md-7 col-xs-7">
-										<p>吉林大学第一届全明星篮球赛盛大开幕</p>
+										<p>吉林大学第三届全明星篮球赛盛大开幕</p>
 										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
 										<br>
 										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
@@ -528,7 +310,7 @@
 										<img src="img/photo/activity3.jpg" height="100" width="100" />
 									</div>
 									<div class="col-lg-7 col-md-7 col-xs-7">
-										<p>2017吉林大学首届机器人大赛暨吉林大学机器人梦工场启动仪式举行</p>
+										<p>勘工系净月潭之旅</p>
 										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
 										<br>
 										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
@@ -540,7 +322,7 @@
 										<img src="img/photo/activity4.jpg" height="100" width="100" />
 									</div>
 									<div class="col-lg-7 col-md-7 col-xs-7">
-										<p>爱心传递：大学生的别样六一</p>
+										<p>班级活动——欢乐谷真人CS</p>
 										<span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>2017年6月14日
 										<br>
 										<span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>0条评论</div>
@@ -601,7 +383,7 @@
 			<div class="container">
 				<div class="row footer-top">
 					<div class="col-sm-6 col-lg-6">
-						<h3>勘工系7班网站前端模板</h3>
+						<h3>勘工班网站前端模板</h3>
 						<p>本网站使用HTML5技术，Bootstrap3前端开发框架。</p>
 					</div>
 					<div class="col-sm-6  col-lg-5 col-lg-offset-1">
@@ -627,16 +409,7 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			$('#btn-courelist').on('hidden.bs.collapse', function() {
-				$('.open1').html('<span class="glyphicon glyphicon-chevron-down">点击弹出完整课程表</span>');
-			})
-			$('#btn-courelist').on('shown.bs.collapse', function() {
-				$('.open1').html('<span class="glyphicon glyphicon-chevron-up">收起</span>')
-			})
-		</script>
 
-		<script src="dist/js/app.js"></script>
-	</body>
+	<script src="dist/js/app.js"></script></body>
 
 </html>
