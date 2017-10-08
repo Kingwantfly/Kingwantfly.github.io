@@ -1,0 +1,176 @@
+$color-gray-bg: #e5e5e5;
+$color-gray: #e5e5e5;
+$color-current: #108ee9;
+$color-stop: #d0021b;
+
+$border-narmal: 1px solid $color-gray;
+$border-stop: 1px solid $color-stop;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  font-size: 0;
+  padding: 20px;
+  // body
+  .item {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+    line-height: 19px;
+    width: 77px;
+    padding: 2px 0;
+    margin: 0 9px;
+    border-top: $border-narmal;
+    border-bottom: $border-narmal;
+    .left.first {
+      border: $border-narmal;
+      border-right: none;
+    }
+    .left.normal {
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+      &:after {
+        border-top-color: $color-gray;
+        border-bottom-color: $color-gray;
+        border-left-color: transparent;
+      }
+    }
+    .left.stop {
+      border: $border-stop;
+      border-right: none;
+    }
+    .right.last {
+      border: $border-narmal;
+      border-left: none;
+    }
+    .right.normal {
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: #fff;
+      &:after {
+        border-top-color: #fff;
+        border-bottom-color: #fff;
+        border-left-color: $color-gray;
+      }
+    }
+    .right.stop {
+      border: $border-stop;
+      border-left: none;
+    }
+    &.shadow {
+      background-color: $color-gray-bg;
+      .left.first {
+        background-color: $color-gray-bg;
+      }
+      .right.normal {
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: $color-gray-bg;
+        &:after {
+          border-top-color: #fff;
+          border-bottom-color: #fff;
+          border-left-color: $color-gray-bg;
+        }
+      }
+    }
+    &.current {
+      color: #fff;
+      background-color: $color-current;
+      border-color: $color-current;
+      .left.first {
+        background-color: $color-current;
+      }
+      .left.normal {
+        border-top-color: $color-current;
+        border-bottom-color: $color-current;
+        &:after {
+          border-top-color: $color-current;
+          border-bottom-color: $color-current;
+          border-left-color: transparent;
+        }
+      }
+      .right.normal {
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: $color-current;
+        &:after {
+          border-top-color: #fff;
+          border-bottom-color: #fff;
+          border-left-color: $color-current;
+        }
+      }
+    }
+    &.stop {
+      color: $color-stop;
+      border-color: $color-stop;
+    }
+  }
+
+  // 左侧和右侧
+  .bar {
+    position: absolute;
+    top: -1px;
+    box-sizing: border-box;
+    height: 25px;
+    width: 9px;
+  }
+  .left {
+    left: -9px;
+    &.normal {
+      width: 0;
+      height: 0;
+      top: 0;
+      left: -8px;
+      border-left: 9px solid transparent;
+      border-top: 11.5px solid #fff;
+      border-bottom: 11.5px solid #fff;
+    }
+    &.normal:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      left: -10px;
+      top: -12.5px;
+      height: 0;
+      width: 0;
+      border-left: 9px;
+      border-top: 12.5px;
+      border-bottom: 12.5px;
+      border-style: solid;
+      border-right: none;
+    }
+  }
+  .right {
+    right: -9px;
+    &.normal {
+      width: 0;
+      height: 0;
+      top: 0;
+      right: -9px;
+      border-left: 9px solid #f00;
+      border-top: 11.5px solid transparent;
+      border-bottom: 11.5px solid transparent;
+    }
+    &.normal:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      left: -9px;
+      top: -12.5px;
+      height: 0;
+      width: 0;
+      border-left: 9px;
+      border-top: 12.5px;
+      border-bottom: 12.5px;
+      border-style: solid;
+      border-right: none;
+    }
+  }
+}
